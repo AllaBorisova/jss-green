@@ -1,0 +1,64 @@
+mixin tabs-slider(imgsrc, name, text)
+	.section-tabs__block-slider
+		.section-tabs__slider 
+			.section-tabs__for-slide
+				.section-tabs__slide
+					img(src="./img/about-img.jpg" alt="")
+					.section-tabs__slide-text Жилой комплекс выдержан в современном стиле и гармонирует с уже существующей застройкой микрорайона.
+			.section-tabs__for-slide
+				.section-tabs__slide
+					img(src="./img/about-img.jpg" alt="")
+					.section-tabs__slide-text Жилой комплекс выдержан в современном стиле и гармонирует с уже существующей застройкой микрорайона.
+		.section-tabs__nav-slider.nav-slider
+			button.nav-slider__prev 
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 12L14 16L18 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg>
+			button.nav-slider__next 
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 12L18 16L14 20" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M2.66675 16.0001C2.66675 9.71469 2.66675 6.57199 4.61937 4.61937C6.57199 2.66675 9.71469 2.66675 16.0001 2.66675C22.2855 2.66675 25.4282 2.66675 27.3808 4.61937C29.3334 6.57199 29.3334 9.71469 29.3334 16.0001C29.3334 22.2855 29.3334 25.4282 27.3808 27.3808C25.4282 29.3334 22.2855 29.3334 16.0001 29.3334C9.71469 29.3334 6.57199 29.3334 4.61937 27.3808C2.66675 25.4282 2.66675 22.2855 2.66675 16.0001Z" stroke="white" stroke-width="1.5" /></svg>
+mixin list-links (...items)
+	ul
+		each item in items
+			li
+				a(href="")= item
+mixin list (...items)
+	ul
+		each item in items
+			li= item
+mixin custom-checkbox(text)
+	label.custom-checkbox
+		input.custom-checkbox__checkbox(type="checkbox" name="")
+		span.custom-checkbox__span
+		span.custom-checkbox__label= text 
+		
+mixin custom-checkbox-agree(text)
+	label.custom-checkbox
+		input.custom-checkbox__checkbox(type="checkbox" name="")
+		span.custom-checkbox__span
+		span.custom-checkbox__label Я прочитал и принимаю условия <a href="">Политики конфиденциальности</a> и <a href="">Правил обработки персональных данных</a>
+//- mixin custom-checkbox_orange(text)
+//- 	label.custom-checkbox.custom-checkbox_orange
+//- 		input.custom-checkbox__checkbox(type="checkbox" name="")
+//- 		span.custom-checkbox__span
+//- 		span.custom-checkbox__label= text
+mixin svg(name)
+	svg&attributes(attributes)
+		use(xlink:href=`./img/sprite.svg#${name}`)
+mixin socials()
+	.socials
+		a.socials__link(href="" target="_blank") 
+			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 0C16.0444 0 12.1776 1.17298 8.8886 3.37061C5.59962 5.56824 3.03617 8.69181 1.52242 12.3463C0.00866568 16.0009 -0.387401 20.0222 0.384303 23.9018C1.15601 27.7814 3.06082 31.3451 5.85787 34.1421C8.65492 36.9392 12.2186 38.844 16.0982 39.6157C19.9778 40.3874 23.9992 39.9913 27.6537 38.4776C31.3082 36.9638 34.4318 34.4004 36.6294 31.1114C38.827 27.8224 40 23.9556 40 20C40 14.6957 37.8929 9.60859 34.1421 5.85786C30.3914 2.10714 25.3043 0 20 0ZM30.573 26.938H27.462C25.704 26.938 25.409 25.938 23.962 24.49C22.654 23.182 21.929 24.185 21.962 26.048C21.9793 26.1633 21.9704 26.2809 21.936 26.3923C21.9016 26.5036 21.8426 26.6058 21.7634 26.6913C21.6842 26.7767 21.5868 26.8433 21.4783 26.886C21.3699 26.9287 21.2532 26.9465 21.137 26.938C19.295 26.938 16.647 27.198 13.964 24.305C11.5792 21.4697 9.67927 18.2598 8.34101 14.805C8.34101 14.458 8.62801 14.305 9.10601 14.305H12.269C13.107 14.305 13.177 14.72 13.412 15.252C14.385 17.47 16.712 21.922 17.335 19.437C17.692 18.01 17.835 14.705 16.31 14.42C15.443 14.26 16.97 13.333 19.18 13.333C19.7714 13.3328 20.3608 13.3999 20.937 13.533C22.059 13.793 22.064 14.296 22.047 15.033C21.99 17.81 21.655 19.676 22.387 20.148C23.087 20.6 24.922 17.648 25.894 15.363C26.159 14.733 26.212 14.31 26.966 14.31H30.836C32.863 14.31 30.571 17.223 28.819 19.497C27.407 21.329 27.482 21.364 29.124 22.887C30.292 23.972 31.674 25.454 31.674 26.292C31.667 26.685 31.357 26.938 30.573 26.938Z" fill="#FFCA66" /></svg>
+		a.socials__link(href="" target="_blank") 
+			<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 0C8.95416 0 0 8.95416 0 20C0 31.0459 8.95416 40 20 40C31.0459 40 40 31.0459 40 20C40 8.95416 31.0459 0 20 0ZM24.9945 28.2925L27.9999 12.6023C27.9999 11.5579 26.6131 12.189 26.6131 12.189L9.73907 19.0439C9.73907 19.0439 8.94012 19.3267 9.0036 19.8493C9.06616 20.3711 9.71771 20.611 9.71771 20.611L13.8567 22.0532L24.5856 14.9975C25.1563 14.639 25.4611 14.9216 24.9697 15.3961C24.6524 15.7029 17.3889 22.4655 16.4524 23.3365L16.4844 23.3526L23.4189 28.8586C24.574 29.3803 24.9945 28.2925 24.9945 28.2925Z" fill="#FFCA66" /></svg>
+//- mixin news(imgsrc, category, name, preview, views)
+//- 	.news__item
+//- 		a.news__img(style='background-image:url(./img/' + imgsrc +')')
+//- 		.news__desc
+//- 			.accent-category.news__category= category
+//- 			a.news__name(href="")= name
+//- 			.news__preview= preview
+//- 			.news__views
+//- 				+svg("eye")
+//- 				span= views
+//- mixin switch 
+//- 	label.switch
+//- 		input(type="checkbox")
+//- 		span.switch__slider

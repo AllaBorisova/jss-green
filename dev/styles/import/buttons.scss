@@ -1,0 +1,111 @@
+.button {
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  padding: 0rem 3rem;
+  height: 6rem;
+  max-width: 32.7rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  color: $color-text-light;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  @include tr;
+  background-color: $color-primary;
+  gap: 2rem;
+  border-radius: 12.8rem;
+  background: $color-primary;
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  &:hover {
+    box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+      0 21px 21px 0 rgba(255, 172, 28, 0.09),
+      0 47px 28px 0 rgba(255, 172, 28, 0.05),
+      0 84px 34px 0 rgba(255, 172, 28, 0.01),
+      0 131px 37px 0 rgba(255, 172, 28, 0);
+  }
+  &:active {
+    box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+      0 21px 21px 0 rgba(255, 172, 28, 0.09),
+      0 47px 28px 0 rgba(255, 172, 28, 0.05),
+      0 84px 34px 0 rgba(255, 172, 28, 0.01),
+      0 131px 37px 0 rgba(255, 172, 28, 0);
+  }
+
+  &_full {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.button-order {
+  box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+    0 21px 21px 0 rgba(255, 172, 28, 0.09),
+    0 47px 28px 0 rgba(255, 172, 28, 0.05),
+    0 84px 34px 0 rgba(255, 172, 28, 0.01), 0 131px 37px 0 rgba(255, 172, 28, 0);
+  background: url(../img/order-icon.svg) no-repeat center#FF6363;
+  background-position: center bottom 2rem;
+  border-radius: 2rem;
+  width: 8rem;
+  height: 23.7rem;
+  span {
+    display: block;
+    transform: rotate(-90deg);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 9.4rem;
+    @media (max-width: $breakpoint-mobile) {
+      transform: none;
+      margin-top: 0;
+    }
+  }
+  @media (max-width: $breakpoint-mobile) {
+    width: auto;
+    height: 11.8rem;
+    background-position: top 1.6rem left 1.6rem;
+    padding: 6.9rem 1rem 1.6rem 1.6rem;
+    background-size: 4.4rem;
+  }
+}
+.button-choose {
+  box-shadow: 0 5px 12px 0 rgba(255, 172, 28, 0.1),
+    0 21px 21px 0 rgba(255, 172, 28, 0.09),
+    0 47px 28px 0 rgba(255, 172, 28, 0.05),
+    0 84px 34px 0 rgba(255, 172, 28, 0.01), 0 131px 37px 0 rgba(255, 172, 28, 0);
+  background: url(../img/choose-icon.svg) no-repeat center $color-primary;
+  background-position: center bottom 2rem;
+  border-radius: 2rem;
+  width: 8rem;
+  height: 18.3rem;
+  span {
+    display: block;
+    transform: rotate(-90deg);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 4.9rem;
+    @media (max-width: $breakpoint-mobile) {
+      transform: none;
+      margin-top: 0;
+    }
+  }
+  @media (max-width: $breakpoint-mobile) {
+    width: auto;
+    height: 11.8rem;
+    background-position: top 1.6rem left 1.6rem;
+    padding: 6.9rem 1rem 1.6rem 1.6rem;
+    background-size: 3.9rem;
+  }
+}

@@ -1,0 +1,135 @@
+main.main
+	.flats 
+		.flats__title 
+			h1.h1 Квартиры
+			.info Наведите курсором на план этажа, выберите подходящую квартиру, кликните для подоброного изучения и бронирования квартиры.
+		.flats__columns
+			.flats__column-left
+				.floor-slider.floor-slider_choose-flat
+					.floor-slider__floor
+						.floor-slider__slide(data-floor="2").active
+							span 2
+							| Этаж
+						- let count = 2;
+							while count < 10
+								- count += 1;
+								.floor-slider__slide(data-floor=`${count}`)
+									span= count
+									| Этаж
+					.floor-slider__controls
+						.floor-slider__prev 
+							<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.3459 18.5L16.3459 14.5L20.3459 18.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M16.3459 29.8333C10.0605 29.8333 6.91782 29.8333 4.96519 27.8806C3.01257 25.928 3.01257 22.7853 3.01257 16.4999C3.01257 10.2145 3.01257 7.07183 4.96519 5.11921C6.91782 3.16658 10.0605 3.16658 16.3459 3.16658C22.6313 3.16658 25.774 3.16658 27.7266 5.1192C29.6792 7.07183 29.6792 10.2145 29.6792 16.4999C29.6792 22.7853 29.6792 25.928 27.7266 27.8806C25.774 29.8333 22.6313 29.8333 16.3459 29.8333Z" stroke="white" stroke-width="1.5" /></svg>
+						.floor-slider__next
+							<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.3459 14.5L16.3459 18.5L20.3459 14.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M16.3459 29.8333C10.0605 29.8333 6.91782 29.8333 4.96519 27.8806C3.01257 25.928 3.01257 22.7853 3.01257 16.4999C3.01257 10.2145 3.01257 7.07183 4.96519 5.11921C6.91782 3.16658 10.0605 3.16658 16.3459 3.16658C22.6313 3.16658 25.774 3.16658 27.7266 5.1192C29.6792 7.07183 29.6792 10.2145 29.6792 16.4999C29.6792 22.7853 29.6792 25.928 27.7266 27.8806C25.774 29.8333 22.6313 29.8333 16.3459 29.8333Z" stroke="white" stroke-width="1.5" /></svg>
+				.flats__mini-floor 
+					img(src="./img/mini-floor.png" alt="")
+				.flats__direction
+					img(src="./img/direction.png" alt="")
+			.flats__column-right 
+				.tooltip
+					.tooltip__arrow.tooltip__arrow_top 
+					.tooltip__text 
+						.tooltip__img 
+							img(src="./img/flat-detail.png" alt="")
+						.tooltip__top 
+							.tooltip__house Номер 155
+							.tooltip__floor эТАЖ 9
+						.tooltip__s Площадь: 69.31
+						.tooltip__links
+							a(href="") Бронь
+							a(href="") Статус
+				.floor-block__svg 
+				img(src="./img/one-floor.png" alt="")
+	.section-img.section-img_floor.section-img_floor_flats
+		.floor-block 
+			.tooltip
+				.tooltip__arrow.tooltip__arrow_top 
+				.tooltip__text 
+					.tooltip__top 
+						.tooltip__house Дом 1
+						.tooltip__floor Этаж 1
+					.tooltip__row Свободно: 0 квартир
+					.tooltip__row Куплено: 26  квартир
+			.floor-block__svg 
+				<svg viewBox="0 0 1440 850" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1347 0L1288 8.5V50H1267V101H1288V76.5L1347 51V0ZM1266.5 49.5L1086 116H1037V109H970V116H910V167H970H1037H1086L1266.5 100.5V49.5ZM75 109H0V167H75H125V116H75V109ZM221 116H281V109H405V116H465V167H405H281H221V116ZM624 116H564V167H624H748H808V116H748V109H624V116Z" fill="#FFAC1C" fill-opacity="0" /></svg>
+			img(src="./img/choose-floor.jpg" alt="")
+		.section-img__subtitle Выберите этаж
+		.section-img__buttons
+			a.button-order(href="")
+				span ЗАБРОНИРОВАТЬ КВАРТИРУ
+			a.button-choose(href="")
+				span Выбрать квартиру
+	.flats__floor-list 
+		.floor-table.active(data-floor=`2`)
+			.floor-table__tr.floor-table__tr_thead
+				.floor-table__th Номер
+				.floor-table__th Этаж
+				.floor-table__th Кол-во комнат
+				.floor-table__th Площадь
+				.floor-table__th Цена
+				.floor-table__th Статус
+				.floor-table__th 
+			- let count3 = 1;
+				while count3 < 15
+					- count3 += 1;
+					.floor-table__tr.floor-table__tr_tbody
+						.floor-table__td
+							span.floor-table__name Номер
+							span.floor-table__value= `2${count3}`
+						.floor-table__td
+							span.floor-table__name Этаж
+							span.floor-table__value 2
+						.floor-table__td
+							span.floor-table__name Кол-во комнат
+							span.floor-table__value 3
+						.floor-table__td
+							span.floor-table__name Площадь
+							span.floor-table__value 69.29 кв.м
+						.floor-table__td
+							span.floor-table__name Цена
+							span.floor-table__value -
+						.floor-table__td
+							span.floor-table__name Статус
+							span.floor-table__value Продана
+						.floor-table__td
+							span.floor-table__name
+							span.floor-table__value
+								a(href="") Подробнее
+		- let count4 = 2;
+			while count4 < 10
+				- count4 += 1;
+				.floor-table(data-floor=`${count4}`)
+					.floor-table__tr.floor-table__tr_thead
+						.floor-table__th Номер
+						.floor-table__th Этаж
+						.floor-table__th Кол-во комнат
+						.floor-table__th Площадь
+						.floor-table__th Цена
+						.floor-table__th Статус
+						.floor-table__th 
+					- let count3 = 1;
+						while count3 < 15
+							- count3 += 1;
+							.floor-table__tr.floor-table__tr_tbody
+								.floor-table__td
+									span.floor-table__name Номер
+									span.floor-table__value= `${count4}${count3}`
+								.floor-table__td
+									span.floor-table__name Этаж
+									span.floor-table__value= `${count4}`
+								.floor-table__td
+									span.floor-table__name Кол-во комнат
+									span.floor-table__value 3
+								.floor-table__td
+									span.floor-table__name Площадь
+									span.floor-table__value 69.29 кв.м
+								.floor-table__td
+									span.floor-table__name Цена
+									span.floor-table__value -
+								.floor-table__td
+									span.floor-table__name Статус
+									span.floor-table__value Продана
+								.floor-table__td
+									span.floor-table__name
+									span.floor-table__value
+											a(href="") Подробнее

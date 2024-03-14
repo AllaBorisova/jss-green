@@ -1,0 +1,120 @@
+.footer {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 5rem 5rem 0 0;
+  position: relative;
+  z-index: 2;
+  margin-top: -7rem;
+  @media (max-width: $breakpoint-mobile) {
+    margin-top: -3rem;
+    padding: 0px;
+    .container {
+      margin: 0;
+    }
+  }
+  &__wrapper {
+    border-radius: 5rem;
+    background: $color-text-dark;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    @media (max-width: $breakpoint-mobile) {
+      padding: 3rem 1.6rem;
+      border-radius: 3rem 3rem 0 0;
+    }
+  }
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 6.6rem;
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+  &__logo {
+    max-width: 23.7rem;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 2.5rem;
+    // margin-left: auto;
+    @media (max-width: $breakpoint-tablet) {
+      max-width: 100%;
+      margin-left: 0;
+      align-items: flex-start;
+    }
+  }
+  &__socials {
+    margin-left: auto;
+    @media (max-width: $breakpoint-mobile) {
+      margin-left: 0;
+    }
+  }
+  &__phone {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    display: block;
+    color: $color-text-light;
+    @include hover;
+  }
+
+  &__menu {
+    max-width: 64rem;
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 24rem;
+    }
+    ul {
+      @include ul-clean;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2rem;
+      row-gap: 2.5rem;
+      @media (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      li {
+        a {
+          font-size: 1.6rem;
+          font-weight: 400;
+          line-height: 120%;
+          color: $color-text-light;
+          @include hover;
+        }
+      }
+    }
+  }
+  &__other {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    font-size: 1.6rem;
+    line-height: 125%;
+    color: $color-text-light;
+    margin-top: 3rem;
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__copyright {
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 1.4rem;
+    }
+  }
+  &__made {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
